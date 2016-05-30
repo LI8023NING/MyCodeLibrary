@@ -28,6 +28,10 @@ public:
 		Clear();
 	}
 
+	///////////////////
+	//´ó·ù¶ÈÌáÉı
+	//////////////////
+
 	//Slist(const Slist& s)
 	//	:_head(NULL)
 	//	,_tail(NULL)
