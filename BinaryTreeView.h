@@ -61,7 +61,7 @@ void InOrderTraverse(BinaryTreeNode * pRoot)
     printf("%d\n",pRoot->data); // 显示结点数据
 }
 
-
+测试成功
 
 
 
