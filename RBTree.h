@@ -1,11 +1,13 @@
 #pragma once
 
+//红黑颜色
 enum Colour
 {
 	RED,
 	BLACK,
 };
 
+//红黑树节点结构
 template<class K, class V>
 struct RBTreeNode
 {
@@ -32,6 +34,8 @@ struct RBTreeNode
 	{}
 };
 
+
+//树结构
 // > ==
 template<class K, class V>
 class RBTree
@@ -41,7 +45,8 @@ public:
 	RBTree()
 		:_root(NULL)
 	{}
-
+	
+	//插入比较复杂，详细见博客
 	bool Insert(const K& key, const V& value)
 	{
 		//1.空树的时候
@@ -146,6 +151,7 @@ public:
 		return true;
 	}
 
+	//左旋
 	void _RotateL(Node* parent)
 	{
 		Node* subR = parent->_right;
@@ -175,7 +181,8 @@ public:
 			}
 		}
 	}
-
+	
+ 	//右旋
 	void _RotateR(Node* parent)
 	{
 		Node* subL = parent->_left;
