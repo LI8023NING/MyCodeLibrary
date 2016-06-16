@@ -26,3 +26,23 @@ void Test()
 {
 	Prime();
 }
+
+//方案二
+//1-100内的素数
+void Prime()
+{
+	int i, j;
+	int n;
+	for (i = 1; i <= 100; i++)
+	{
+		for (j = 1, n = 0; j <= i; j++)
+		{
+			if (i%j == 0)
+				n++;
+		}
+		if (n == 2)
+		{
+			printf("%d  ", i);
+		}
+	}
+}
