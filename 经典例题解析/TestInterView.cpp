@@ -2,7 +2,8 @@
 using namespace std;
 
 //#include"AverageWithBit.h"
-#include"ScoreCount.h"
+//#include"ScoreCount.h"
+#include"DefineUse.h"
 int main()
 {
 	Test();
