@@ -27,5 +27,6 @@ void Test()
 
 	Derive d; 
 	Base *b = new Derive();
+	b->g();
 	b->f();  //调用的是子类中的f(); 实现多态的表现；
 }
