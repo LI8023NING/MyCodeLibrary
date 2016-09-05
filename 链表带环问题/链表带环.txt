@@ -1,0 +1,47 @@
+1.设置两个指针(fast, slow)，
+2.初始值都指向头，slow每次前进一步，fast每次前进二步，
+3.如果链表存在环，则fast必定先进入环，而slow后进入环，两个指针必定相遇。
+(当然，fast先行头到尾部为NULL，则为无环链表)程序如下：
+
+bool IsExitsLoop(slist *head)
+{
+    slist *slow = head, *fast = head;
+
+    while ( fast && fast->next ) 
+    {
+        slow = slow->next;
+        fast = fast->next->next;
+        if ( slow == fast ) break;
+    }
+
+    return !(fast == NULL || fast->next == NULL);
+}
+
+
+1.一个从相遇的地方走
+2.一个从头走
+3.相遇即就是入口
+slist* FindLoopPort(slist *head)
+{
+    slist *slow = head, *fast = head;
+
+    while ( fast && fast->next ) 
+    {
+        slow = slow->next;
+        fast = fast->next->next;
+        if ( slow == fast ) break;
+    }
+
+    if (fast == NULL || fast->next == NULL)
+        return NULL;
+
+    slow = head;
+    while (slow != fast)
+    {
+         slow = slow->next;
+         fast = fast->next;
+    }
+
+    return slow;
+}
+
